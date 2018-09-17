@@ -2,13 +2,20 @@ package tasks.employer.beans;
 
 public class Clock {
 
-    private static final String ZERO = "0";
-    private static final String EMPTY = "";
-    private static final String SEPARATOR = ":";
+    private static final String ZERO = "\u0030";
+    private static final String EMPTY = "\u0000";
+    private static final String COLON = "\u003A";
     private static final int NUMBER = 10;
 
     private int hour;
     private int minute;
+
+    public Clock(){}
+
+    public Clock(int hour, int minute) {
+        this.hour = hour;
+        this.minute = minute;
+    }
 
     public int getHour() {
         return hour;
@@ -28,6 +35,6 @@ public class Clock {
 
     public String getTime() {
         String minute = this.minute < NUMBER ? ZERO + this.minute : EMPTY + this.minute;
-        return hour + SEPARATOR + minute;
+        return hour + COLON + minute;
     }
 }

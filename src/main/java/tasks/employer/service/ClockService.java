@@ -3,7 +3,6 @@ package tasks.employer.service;
 import tasks.employer.beans.Clock;
 import sun.rmi.log.LogHandler;
 
-import java.io.UnsupportedEncodingException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -40,7 +39,7 @@ public class ClockService {
         return minute >= 0 && minute < HOUR_MINUTES;
     }
 
-    public double calcAngle(Clock clock)throws UnsupportedEncodingException {
+    public double calcAngle(Clock clock) {
 
         double hourDegree = convertHoursToFormat12(clock.getHour()) * ONE_HOUR_ANGLE + clock.getMinute() * ONE_HOUR_FOLLOW_MINUTE_ANGLE;
         double minuteDegree = clock.getMinute() * ONE_MINUTE_ANGLE;

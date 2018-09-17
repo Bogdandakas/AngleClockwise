@@ -5,7 +5,6 @@ import tasks.employer.service.ClockService;
 import sun.rmi.log.LogHandler;
 import tasks.employer.service.PropertiesService;
 
-import java.io.UnsupportedEncodingException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.logging.Level;
@@ -22,12 +21,12 @@ public class App {
     private static Logger logger = Logger.getLogger(LogHandler.class.getName());
     private static PropertiesService properties = new PropertiesService();
 
-    public static void main(String args[]) throws UnsupportedEncodingException {
+    public static void main(String args[]) {
 
         onApp();
     }
 
-    private static void onApp() throws UnsupportedEncodingException {
+    private static void onApp() {
 
         logger.log(Level.INFO, properties.get(START_MESSAGE));
 
@@ -40,20 +39,18 @@ public class App {
         logger.log(Level.INFO, properties.get(FINISH_MESSAGE));
     }
 
-    private static void runApp() throws UnsupportedEncodingException {
+    private static void runApp() {
 
         ClockService service = new ClockService();
 
-        Clock clock = new Clock();
-        clock.setHour(getHoursFromScanner(service));
-        clock.setMinute(getMinutesFromScanner(service));
+        Clock clock = new Clock(getHours(service),getMinutes(service));
 
         service.calcAngle(clock);
 
         isOn = getRunStatus();
     }
 
-    private static boolean getRunStatus() throws UnsupportedEncodingException {
+    private static boolean getRunStatus() {
 
         boolean runInput = true;
         while (runInput) {
@@ -71,7 +68,7 @@ public class App {
         return false;
     }
 
-    private static int getHoursFromScanner(ClockService service) throws UnsupportedEncodingException {
+    private static int getHours(ClockService service) {
 
         boolean runInput = true;
         while (runInput) {
@@ -93,7 +90,7 @@ public class App {
         return 0;
     }
 
-    private static int getMinutesFromScanner(ClockService service) throws UnsupportedEncodingException {
+    private static int getMinutes(ClockService service) {
 
         boolean runInput = true;
         while (runInput) {

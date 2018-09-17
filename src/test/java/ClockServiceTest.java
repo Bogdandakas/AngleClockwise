@@ -21,10 +21,11 @@ public class ClockServiceTest {
     public void calcAngle() throws UnsupportedEncodingException {
         double result = 0;
         Clock clock = new Clock();
+        int counter = 0;
 
         for (int hour = 0; hour < 24; hour++) {
             clock.setHour(hour);
-            for (int minute = 0; minute < 59; minute++) {
+            for (int minute = 0; minute < 60; minute++) {
                 clock.setMinute(minute);
 
                 result = Math.abs((service.convertHoursToFormat12(hour) * ONE_HOUR_ANGLE) +
@@ -34,6 +35,7 @@ public class ClockServiceTest {
                 result = result > STRAIGHT_ANGLE ? MAX_ANGLE - result : result;
 
                 assertEquals(result, service.calcAngle(clock));
+                counter++;
             }
         }
     }
