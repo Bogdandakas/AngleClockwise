@@ -3,4 +3,4 @@ Angle calculation between the analog clock arrows based the values of digital cl
 Internationalize, adapted to en(default), lt, pl and ru languages.
 
 Example
-![angle](https://user-images.githubusercontent.com/34347865/45607588-1bbb1780-ba56-11e8-983b-a66e301aa9e2.gif)
+![angle](https://user-images.githubusercontent.com/34347865/45608557-460fd380-ba5c-11e8-85ac-573e22a49cbd.gif)
