@@ -1,11 +1,12 @@
-import beans.Clock;
-import jdk.nashorn.internal.ir.annotations.Ignore;
+import tasks.employer.beans.Clock;
 import org.junit.Before;
 import org.junit.Test;
-import service.ClockService;
+import tasks.employer.service.ClockService;
+
+import java.io.UnsupportedEncodingException;
 
 import static junit.framework.Assert.assertEquals;
-import static service.ClockService.*;
+import static tasks.employer.service.ClockService.*;
 
 public class ClockServiceTest {
 
@@ -16,15 +17,8 @@ public class ClockServiceTest {
         service = new ClockService();
     }
 
-
-//    @Test(expected = RuntimeException.class)
-//    public void getInputnumber() {
-//        App app = new App();
-//
-//    }
-
     @Test
-    public void calcAngle() {
+    public void calcAngle() throws UnsupportedEncodingException {
         double result = 0;
         Clock clock = new Clock();
 

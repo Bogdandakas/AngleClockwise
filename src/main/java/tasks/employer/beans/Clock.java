@@ -1,4 +1,4 @@
-package beans;
+package tasks.employer.beans;
 
 public class Clock {
 

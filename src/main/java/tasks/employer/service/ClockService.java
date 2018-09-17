@@ -1,14 +1,15 @@
-package service;
+package tasks.employer.service;
 
-import beans.Clock;
+import tasks.employer.beans.Clock;
 import sun.rmi.log.LogHandler;
 
+import java.io.UnsupportedEncodingException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import static beans.LogMessage.DEGREE_SYMBOL;
-import static beans.LogMessage.INPUT_TIME;
-import static beans.LogMessage.RESULT;
+import static tasks.employer.beans.LogMessage.DEGREE_SYMBOL;
+import static tasks.employer.beans.LogMessage.INPUT_TIME;
+import static tasks.employer.beans.LogMessage.RESULT;
 
 public class ClockService {
 
@@ -21,7 +22,8 @@ public class ClockService {
     public static final int STRAIGHT_ANGLE = 180;
     public static final int MAX_ANGLE = 360;
 
-    private static Logger logger = Logger.getLogger(LogHandler.class.getName());
+    private Logger logger = Logger.getLogger(LogHandler.class.getName());
+    private PropertiesService properties = new PropertiesService();
 
     public int convertHoursToFormat12(int hour) {
 
@@ -38,14 +40,15 @@ public class ClockService {
         return minute >= 0 && minute < HOUR_MINUTES;
     }
 
-    public double calcAngle(Clock clock) {
+    public double calcAngle(Clock clock)throws UnsupportedEncodingException {
 
         double hourDegree = convertHoursToFormat12(clock.getHour()) * ONE_HOUR_ANGLE + clock.getMinute() * ONE_HOUR_FOLLOW_MINUTE_ANGLE;
         double minuteDegree = clock.getMinute() * ONE_MINUTE_ANGLE;
         double result = Math.abs(hourDegree - minuteDegree);
 
         result = result > STRAIGHT_ANGLE ? MAX_ANGLE - result : result;
-        logger.log(Level.INFO, INPUT_TIME + clock.getTime() + RESULT + result + DEGREE_SYMBOL);
+        logger.log(Level.INFO, properties.get(INPUT_TIME) + clock.getTime() +
+                properties.get(RESULT) + result + properties.get(DEGREE_SYMBOL));
 
         return result;
     }
