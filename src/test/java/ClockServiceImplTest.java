@@ -1,20 +1,20 @@
 import tasks.employer.beans.Clock;
 import org.junit.Before;
 import org.junit.Test;
-import tasks.employer.service.ClockService;
+import tasks.employer.service.ClockServiceImpl;
 
 import java.io.UnsupportedEncodingException;
 
 import static junit.framework.Assert.assertEquals;
-import static tasks.employer.service.ClockService.*;
+import static tasks.employer.service.ClockServiceImpl.*;
 
-public class ClockServiceTest {
+public class ClockServiceImplTest {
 
-    private ClockService service;
+    private ClockServiceImpl service;
 
     @Before
     public void init() {
-        service = new ClockService();
+        service = new ClockServiceImpl();
     }
 
     @Test

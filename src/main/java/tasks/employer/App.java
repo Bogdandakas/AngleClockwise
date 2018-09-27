@@ -1,7 +1,7 @@
 package tasks.employer;
 
 import tasks.employer.beans.Clock;
-import tasks.employer.service.ClockService;
+import tasks.employer.service.ClockServiceImpl;
 import sun.rmi.log.LogHandler;
 import tasks.employer.service.PropertiesService;
 
@@ -41,9 +41,9 @@ public class App {
 
     private static void runApp() {
 
-        ClockService service = new ClockService();
+        ClockServiceImpl service = new ClockServiceImpl();
 
-        Clock clock = new Clock(getHours(service),getMinutes(service));
+        Clock clock = new Clock(getHours(service), getMinutes(service));
 
         service.calcAngle(clock);
 
@@ -68,7 +68,7 @@ public class App {
         return false;
     }
 
-    private static int getHours(ClockService service) {
+    private static int getHours(ClockServiceImpl service) {
 
         boolean runInput = true;
         while (runInput) {
@@ -81,7 +81,6 @@ public class App {
                 } else {
                     logger.log(Level.WARNING, properties.get(NOT_VALID_HOURS));
                 }
-
             } catch (InputMismatchException e) {
                 scanner.next();
                 logger.log(Level.WARNING, properties.get(NOT_VALID_INPUT));
@@ -90,7 +89,7 @@ public class App {
         return 0;
     }
 
-    private static int getMinutes(ClockService service) {
+    private static int getMinutes(ClockServiceImpl service) {
 
         boolean runInput = true;
         while (runInput) {
