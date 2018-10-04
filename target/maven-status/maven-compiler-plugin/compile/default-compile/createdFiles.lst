@@ -1,0 +1,15 @@
+tasks\employer\controller\IndexController.class
+tasks\employer\entity\Clock.class
+tasks\employer\config\WebConfig.class
+tasks\employer\AppInitializer.class
+tasks\employer\service\ClockServiceImpl.class
+tasks\employer\service\LogDBServiceImpl.class
+tasks\employer\service\ClockService.class
+tasks\employer\controller\LogController.class
+tasks\employer\config\DatabaseConfig.class
+tasks\employer\service\PropertiesService.class
+tasks\employer\service\DBService.class
+tasks\employer\controller\ClockController.class
+tasks\employer\repository\LogRepository.class
+tasks\employer\service\PropertiesServiceImpl.class
+tasks\employer\entity\Log.class

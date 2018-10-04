@@ -1,4 +1,4 @@
-import tasks.employer.beans.Clock;
+import tasks.employer.entity.Clock;
 import org.junit.Before;
 import org.junit.Test;
 import tasks.employer.service.ClockServiceImpl;
@@ -34,7 +34,7 @@ public class ClockServiceImplTest {
 
                 result = result > STRAIGHT_ANGLE ? MAX_ANGLE - result : result;
 
-                assertEquals(result, service.calcAngle(clock));
+                assertEquals(result, service.getAngle(clock));
                 counter++;
             }
         }

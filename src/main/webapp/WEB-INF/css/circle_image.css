@@ -1,0 +1,71 @@
+ <style>
+        #clock {
+            border-radius: 50%;
+            background: #fff url(https://cssanimation.rocks/images/posts/clocks/ios_clock.svg) no-repeat center;
+            background-size: 88%;
+            height: 8em;
+            position: relative;
+            width: 8em;
+        }
+
+        #clock.simple:after {
+            background: #000;
+            border-radius: 50%;
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 5%;
+            height: 5%;
+            z-index: 10;
+        }
+
+        #minutes-container, #hours-container , #circle-container, #circle-border-container, #quarter-container  {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+
+        #hours {
+            background: #000;
+            height: 20%;
+            left: 48.75%;
+            position: absolute;
+            top: 30%;
+            transform-origin: 50% 100%;
+            width: 2.5%;
+            transform: rotateZ(154deg);
+        }
+
+        #minutes {
+            background: #000;
+            height: 40%;
+            left: 49%;
+            position: absolute;
+            top: 10%;
+            transform-origin: 50% 100%;
+            width: 2%;
+            transform: rotateZ(27deg);
+        }
+
+        #circle {
+            background: #000;
+            width: 7%;
+            height: 7%;
+            left: 46.5%;
+            top: 46.5%;
+            position: absolute;
+            border-radius: 100%;
+        }
+
+        #circle-border {
+            width: 250px;
+          	height: 250px;
+           	border: 4px solid #000;
+           	border-radius: 100%;
+        }
+
+ </style>
